@@ -94,7 +94,7 @@ function finish(){let ts=answers.map(x=>x.time),ok=answers.filter(x=>x.correct).
 function rec(){
   let ok=answers.filter(x=>x.correct).length;
   return {id:new Date().toISOString(),...profile,score:ok,pct:ok/PLATES.length*100,
-  avg:Number((answers.reduce((s,x)=>s+x.time,0)/answers.length).toFixed(2))
+avg:Number((answers.reduce((s,x)=>s+x.time,0)/answers.length).toFixed(2)),answers:answers};
 }
 function getData(){return JSON.parse(localStorage.getItem("chromolab_final")||"[]")}
 async function save(){
